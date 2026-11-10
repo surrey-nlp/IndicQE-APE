@@ -1,0 +1,88 @@
+{
+  "experiment_name": "qe-X-ref-xen",
+  "model_name": "models/cometkiwi-infoxlm",
+  "track": "closed",
+  "data_file": "qe_indic_xen.csv",
+  "dev_rmse": 0.7580004930496216,
+  "dev_pearson": 0.6998996734619141,
+  "dev_spearman": 0.6933808603741398,
+  "dev_kendall": 0.5063176104838402,
+  "dev_mae": 0.5840216279029846,
+  "dev_loss": 0.26171714067459106,
+  "test_rmse": 0.8127009272575378,
+  "test_pearson": 0.6840308308601379,
+  "test_spearman": 0.6683928819232224,
+  "test_kendall": 0.4824358739485219,
+  "test_mae": 0.635745108127594,
+  "test_loss": 0.29968515038490295,
+  "per_pair_test": {
+    "et-en": {
+      "n": 1000,
+      "pearson": 0.7579,
+      "spearman": 0.773
+    },
+    "ne-en": {
+      "n": 1000,
+      "pearson": 0.7253,
+      "spearman": 0.7176
+    },
+    "si-en": {
+      "n": 1000,
+      "pearson": 0.6264,
+      "spearman": 0.6001
+    }
+  },
+  "per_pair_dev": {
+    "et-en": {
+      "n": 1000,
+      "pearson": 0.7547,
+      "spearman": 0.7711
+    },
+    "ne-en": {
+      "n": 1000,
+      "pearson": 0.7275,
+      "spearman": 0.7228
+    },
+    "si-en": {
+      "n": 1000,
+      "pearson": 0.6447,
+      "spearman": 0.6284
+    }
+  },
+  "loss_function": "huber",
+  "loss_kwargs": "{\"delta\": 1.0}",
+  "num_train": 20388,
+  "num_dev": 3000,
+  "num_test": 3000,
+  "learning_rate": 3e-05,
+  "train_batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "num_train_epochs": 4.0,
+  "weight_decay": 0.01,
+  "max_length": 256,
+  "seed": 42,
+  "best_checkpoint": "experiments/comet_qe/outputs/qe-X-ref-xen/checkpoint-2550",
+  "use_hybrid_model": true,
+  "deep_mlp": true,
+  "use_lora": false,
+  "use_attention": true,
+  "use_levenshtein": false,
+  "use_normalized_levenshtein": false,
+  "use_jaccard": false,
+  "use_pinyin": false,
+  "use_subword_ratio": false,
+  "use_cefr": false,
+  "use_lid": false,
+  "prepend_lid": false,
+  "use_target_context_entropy": false,
+  "use_target_source_alignment": true,
+  "use_target_source_entropy": true,
+  "use_context_target_entropy": false,
+  "use_multi_layer_entropy": false,
+  "use_attention_variance": false,
+  "use_global_cls_entropy": false,
+  "multi_layer_funneling": true,
+  "funneling_layers": null,
+  "num_funneling_layers": 4
+}

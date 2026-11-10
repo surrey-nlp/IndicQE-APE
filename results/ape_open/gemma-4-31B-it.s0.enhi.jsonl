@@ -1,0 +1,1 @@
+{"_meta": {"task": "ape", "mode": "postedit", "subset": "challenge", "split": "test", "pair": "enhi", "shots": 0, "provider": "vllm", "model": "google/gemma-4-31B-it", "limit": null, "seed": 0, "fewshot_signature": "0", "generation": {"max_tokens": 512, "temperature": 0.0, "top_p": 1.0, "stop": null}}}

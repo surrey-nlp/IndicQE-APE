@@ -1,0 +1,118 @@
+{
+  "experiment_name": "qe-J-A0-joint",
+  "model_name": "models/cometkiwi-infoxlm",
+  "track": "closed",
+  "data_file": "qe_indic_joint_enml.csv",
+  "dev_rmse": 1.426200270652771,
+  "dev_pearson": 0.6688294410705566,
+  "dev_spearman": 0.6651698074517465,
+  "dev_kendall": 0.4891364397800592,
+  "dev_mae": 0.9955646991729736,
+  "dev_loss": 0.6347622871398926,
+  "test_rmse": 1.5464191436767578,
+  "test_pearson": 0.5800908803939819,
+  "test_spearman": 0.5956457139298332,
+  "test_kendall": 0.4300778087433649,
+  "test_mae": 1.1002503633499146,
+  "test_loss": 0.7252246737480164,
+  "per_pair_test": {
+    "en-gu": {
+      "n": 1090,
+      "pearson": 0.5856,
+      "spearman": 0.6364
+    },
+    "en-hi": {
+      "n": 1881,
+      "pearson": 0.5718,
+      "spearman": 0.502
+    },
+    "en-ml": {
+      "n": 1436,
+      "pearson": 0.6207,
+      "spearman": 0.659
+    },
+    "en-mr": {
+      "n": 2165,
+      "pearson": 0.6524,
+      "spearman": 0.6494
+    },
+    "en-ta": {
+      "n": 2038,
+      "pearson": 0.6731,
+      "spearman": 0.6986
+    },
+    "en-te": {
+      "n": 1120,
+      "pearson": 0.3114,
+      "spearman": 0.2838
+    }
+  },
+  "per_pair_dev": {
+    "en-gu": {
+      "n": 350,
+      "pearson": 0.7044,
+      "spearman": 0.7219
+    },
+    "en-hi": {
+      "n": 630,
+      "pearson": 0.7153,
+      "spearman": 0.7325
+    },
+    "en-ml": {
+      "n": 429,
+      "pearson": 0.6055,
+      "spearman": 0.6292
+    },
+    "en-mr": {
+      "n": 663,
+      "pearson": 0.6795,
+      "spearman": 0.649
+    },
+    "en-ta": {
+      "n": 644,
+      "pearson": 0.7152,
+      "spearman": 0.6826
+    },
+    "en-te": {
+      "n": 334,
+      "pearson": 0.361,
+      "spearman": 0.3743
+    }
+  },
+  "loss_function": "huber",
+  "loss_kwargs": "{\"delta\": 1.0}",
+  "num_train": 72806,
+  "num_dev": 3050,
+  "num_test": 9730,
+  "learning_rate": 3e-05,
+  "train_batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "num_train_epochs": 4.0,
+  "weight_decay": 0.01,
+  "max_length": 256,
+  "seed": 42,
+  "best_checkpoint": "experiments/comet_qe/outputs/qe-J-A0-joint/checkpoint-18204",
+  "use_hybrid_model": true,
+  "deep_mlp": true,
+  "use_lora": false,
+  "use_attention": true,
+  "use_levenshtein": false,
+  "use_normalized_levenshtein": false,
+  "use_jaccard": false,
+  "use_pinyin": false,
+  "use_subword_ratio": false,
+  "use_cefr": false,
+  "use_lid": false,
+  "prepend_lid": false,
+  "use_target_context_entropy": false,
+  "use_target_source_alignment": false,
+  "use_target_source_entropy": false,
+  "use_context_target_entropy": false,
+  "use_multi_layer_entropy": false,
+  "use_attention_variance": false,
+  "use_global_cls_entropy": false,
+  "multi_layer_funneling": true,
+  "funneling_layers": null,
+  "num_funneling_layers": 4
+}

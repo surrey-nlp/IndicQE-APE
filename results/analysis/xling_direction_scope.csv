@@ -1,0 +1,11 @@
+block,system,k_pooled,r_pooled,k_scoped,r_scoped,scoped_ci_lo,scoped_ci_hi,scoped_ci_excludes_zero,shift
+"LLM (GEMBA-DA, extended challenge)",BharatGPT-3B,9,-0.4487,6,-0.463,-0.9959,0.3975,False,-0.0143
+"LLM (GEMBA-DA, extended challenge)",Llama-3.2-3B,9,0.8094,6,-0.2687,-0.9256,0.8243,False,-1.0781
+"LLM (GEMBA-DA, extended challenge)",tiny-aya,9,0.9379,6,0.0756,-0.9289,0.8897,False,-0.8623
+"LLM (GEMBA-DA, extended challenge)",sarvam-m,9,0.913,6,0.8382,0.4247,0.9797,True,-0.0747
+"LLM (GEMBA-DA, extended challenge)",gpt-5.5,9,0.9406,6,0.5199,-0.5432,0.9969,False,-0.4207
+"LLM (GEMBA-DA, extended challenge)",aya-expanse-32B,9,0.9178,6,-0.2169,-0.948,0.7911,False,-1.1347
+trained metric (full population),CometKiwi-XL,9,0.1174,6,0.3373,-0.2772,0.9978,False,0.22
+trained metric (full population),XCOMET-XL (ref-free),9,0.7316,6,0.9053,0.7446,0.9979,True,0.1737
+trained metric (full population),MetricX-24 XL (QE),9,-0.9391,6,-0.3838,-0.9952,0.5138,False,0.5553
+trained metric (full population),MetricX-24 XL (ref),7,-0.9303,4,-0.0432,-0.9758,0.9485,False,0.8871

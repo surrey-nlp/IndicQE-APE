@@ -1,0 +1,55 @@
+# ═══════════════════════════════════════════════════════════════
+# QE SMOKE — tiny random encoder, tiny data slice, CPU, offline.
+# Purpose: validate the whole reference-free QE pipeline end-to-end
+# (CSV -> QE input/masks -> collator -> hybrid model -> Trainer ->
+#  metrics -> per-pair breakdown). NOT a real result — random weights.
+# Build the encoder first:  python scripts/make_tiny_encoder.py
+# Build the data first:      python scripts/build_qe_data.py --variant enindic --per-pair 40
+# ═══════════════════════════════════════════════════════════════
+experiment_name: qe-smoke-tiny
+task: qe
+model_name: models/tiny-xlmr
+data_path: data/qe_indic_enindic_smoke40.csv
+report_to: none
+
+# ── QE data schema ────────────────────────────────────────────
+split_column: subset
+dev_split: dev
+test_split: test
+item_id_column: item_id
+label_column: target
+group_column: language_pair
+source_column: source
+mt_column: mt
+segment_order: src_first
+
+# ── Architecture ──────────────────────────────────────────────
+use_hybrid_model: true
+deep_mlp: true
+
+# ── Loss + model selection (QE convention) ────────────────────
+loss_function: huber
+loss_kwargs:
+  delta: 1.0
+metric_for_best_model: pearson
+greater_is_better: true
+
+# ── QE features (exercise the full path) ──────────────────────
+use_attention: true
+use_target_source_alignment: true    # TSA — mt->src adequacy mass
+use_target_source_entropy: true      # TSE — mt->src alignment entropy
+use_length_ratio: true               # |mt| / |src|
+use_lp: true                         # language-pair embedding (A4)
+multi_layer_funneling: false         # last-layer only (tiny 2-layer model)
+
+# ── Training (tiny for smoke) ─────────────────────────────────
+learning_rate: 5e-4
+train_batch_size: 16
+eval_batch_size: 16
+num_train_epochs: 1
+max_length: 128
+warmup_steps: 0
+logging_steps: 5
+save_total_limit: 1
+fp16: false
+seed: 42

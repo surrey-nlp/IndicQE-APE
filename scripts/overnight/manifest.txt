@@ -1,0 +1,7 @@
+# id|command   (GPU 1 jobs, run sequentially; the CPU matra-variants job runs separately in parallel)
+# PY = interpreter with unbabel-comet 2.2.7 (default python3); set CUDA_VISIBLE_DEVICES as needed.
+# QE meta-eval: score the 9,730 en->Indic challenge (src,mt) with COMET-family QE, correlate with DA.
+cometkiwi_da|CUDA_VISIBLE_DEVICES=1 ${PY:-python3} code/scripts/overnight/comet_qe.py Unbabel/wmt22-cometkiwi-da data/IndicQE-APE/data/tasks/qe-da/test.parquet runs/cometkiwi_da 1
+cometkiwi_xl|CUDA_VISIBLE_DEVICES=1 ${PY:-python3} code/scripts/overnight/comet_qe.py Unbabel/wmt23-cometkiwi-da-xl data/IndicQE-APE/data/tasks/qe-da/test.parquet runs/cometkiwi_xl 1
+# XCOMET-XL: QE score + error-span severity (for the severity-agreement eval)
+xcomet_xl|CUDA_VISIBLE_DEVICES=1 ${PY:-python3} code/scripts/overnight/comet_qe.py Unbabel/XCOMET-XL data/IndicQE-APE/data/tasks/qe-da/test.parquet runs/xcomet_xl 1

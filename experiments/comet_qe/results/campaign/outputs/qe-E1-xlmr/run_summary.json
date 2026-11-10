@@ -1,0 +1,108 @@
+{
+  "experiment_name": "qe-E1-xlmr",
+  "model_name": "FacebookAI/xlm-roberta-large",
+  "track": "closed",
+  "data_file": "qe_indic_enindic.csv",
+  "dev_rmse": 1.645815372467041,
+  "dev_pearson": 0.5295202136039734,
+  "dev_spearman": 0.5255381159307249,
+  "dev_kendall": 0.3728343049159515,
+  "dev_mae": 1.140135407447815,
+  "dev_loss": 0.7575231194496155,
+  "test_rmse": 1.7231355905532837,
+  "test_pearson": 0.4397909641265869,
+  "test_spearman": 0.4404035073588229,
+  "test_kendall": 0.3100389062642721,
+  "test_mae": 1.2409838438034058,
+  "test_loss": 0.8342653512954712,
+  "per_pair_test": {
+    "en-gu": {
+      "n": 1090,
+      "pearson": 0.5117,
+      "spearman": 0.5414
+    },
+    "en-hi": {
+      "n": 1853,
+      "pearson": 0.3787,
+      "spearman": 0.2902
+    },
+    "en-mr": {
+      "n": 2124,
+      "pearson": 0.4944,
+      "spearman": 0.5376
+    },
+    "en-ta": {
+      "n": 1973,
+      "pearson": 0.5653,
+      "spearman": 0.5357
+    },
+    "en-te": {
+      "n": 1120,
+      "pearson": 0.168,
+      "spearman": 0.1725
+    }
+  },
+  "per_pair_dev": {
+    "en-gu": {
+      "n": 350,
+      "pearson": 0.5246,
+      "spearman": 0.5177
+    },
+    "en-hi": {
+      "n": 629,
+      "pearson": 0.5826,
+      "spearman": 0.5866
+    },
+    "en-mr": {
+      "n": 652,
+      "pearson": 0.5452,
+      "spearman": 0.5483
+    },
+    "en-ta": {
+      "n": 623,
+      "pearson": 0.5787,
+      "spearman": 0.5443
+    },
+    "en-te": {
+      "n": 334,
+      "pearson": 0.1676,
+      "spearman": 0.1658
+    }
+  },
+  "loss_function": "huber",
+  "loss_kwargs": "{\"delta\": 1.0}",
+  "num_train": 64416,
+  "num_dev": 2588,
+  "num_test": 8160,
+  "learning_rate": 3e-05,
+  "train_batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "num_train_epochs": 4.0,
+  "weight_decay": 0.01,
+  "max_length": 256,
+  "seed": 42,
+  "best_checkpoint": "experiments/comet_qe/outputs/qe-E1-xlmr/checkpoint-16104",
+  "use_hybrid_model": true,
+  "deep_mlp": true,
+  "use_lora": false,
+  "use_attention": true,
+  "use_levenshtein": false,
+  "use_normalized_levenshtein": false,
+  "use_jaccard": false,
+  "use_pinyin": false,
+  "use_subword_ratio": false,
+  "use_cefr": false,
+  "use_lid": false,
+  "prepend_lid": false,
+  "use_target_context_entropy": false,
+  "use_target_source_alignment": false,
+  "use_target_source_entropy": false,
+  "use_context_target_entropy": false,
+  "use_multi_layer_entropy": false,
+  "use_attention_variance": false,
+  "use_global_cls_entropy": false,
+  "multi_layer_funneling": true,
+  "funneling_layers": null,
+  "num_funneling_layers": 4
+}

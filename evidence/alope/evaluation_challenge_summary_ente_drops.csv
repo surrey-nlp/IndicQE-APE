@@ -1,0 +1,7 @@
+run_name,lang_pair,route,floor_ok,easy_n,easy_pearson,pearson,pearson_drop,easy_spearman,spearman,spearman_drop
+tiny-aya-fire_indic_challenge_layer_-11,en-te,A1_disagreement,True,152,0.4172,0.0608,0.3564,0.4517,0.0241,0.4276
+tiny-aya-fire_indic_challenge_layer_-16,en-te,A1_disagreement,True,152,0.3653,0.1804,0.1849,0.4461,0.1209,0.3252
+tiny-aya-fire_indic_challenge_layer_-20,en-te,A1_disagreement,True,152,0.4536,0.095,0.3586,0.4356,0.0833,0.3523
+tiny-aya-fire_indic_challenge_layer_-24,en-te,A1_disagreement,True,152,0.3376,0.1314,0.2062,0.4443,0.0811,0.3632
+tiny-aya-fire_indic_challenge_layer_-5,en-te,A1_disagreement,True,152,0.3395,0.1149,0.2246,0.4207,0.0771,0.3436
+tiny-aya-fire_indic_challenge_layer_-7,en-te,A1_disagreement,True,152,0.4231,0.1358,0.2873,0.4465,0.0983,0.3482

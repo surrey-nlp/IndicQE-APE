@@ -1,0 +1,23 @@
+# Example experiment config. Run via:
+#   indicqe-ape qe --provider openai --model gpt-4o --pair enhi --subset qe_only --shots 0 --limit 200 --out results/gpt4o_enhi_zs.jsonl
+#
+# Configs are not yet wired into the CLI — they're a reference for which knobs exist.
+# Drop a YAML loader into `cli.py` if/when you want config-file launches.
+
+experiment_id: gpt4o_enhi_zeroshot
+task: qe                       # qe | ape | mqm
+provider: openai               # openai | anthropic | google | hf
+model: gpt-4o
+pair: enhi                     # enhi enmr enta engu ente eten neen sien
+subset: qe_only                # ape_only | ape_qe_combined | qe_only | mqm_en_hi
+shots: 0
+limit: 200                     # null for full subset
+seed: 0
+out: results/gpt4o_enhi_zeroshot.jsonl
+cache_dir: cache
+
+# Provider-specific knobs (currently informational; CLI passes only model+name)
+generation:
+  max_tokens: 8                # 8 for QE (single number), 512 for APE/MQM
+  temperature: 0.0
+  top_p: 1.0

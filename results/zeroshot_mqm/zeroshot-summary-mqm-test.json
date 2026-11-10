@@ -1,0 +1,65 @@
+[
+  {
+    "model": "wmt22-cometkiwi-da",
+    "label": "mqm_score",
+    "overall": {
+      "n": 2639,
+      "pearson": 0.3521,
+      "spearman": 0.3304
+    },
+    "per_pair": {
+      "en-hi": {
+        "n": 2639,
+        "pearson": 0.3521,
+        "spearman": 0.3304
+      }
+    },
+    "vs_da_mean": {
+      "n": 476,
+      "pearson": 0.5641,
+      "spearman": 0.3646
+    }
+  },
+  {
+    "model": "wmt23-cometkiwi-da-xl",
+    "label": "mqm_score",
+    "overall": {
+      "n": 2639,
+      "pearson": 0.1229,
+      "spearman": 0.1156
+    },
+    "per_pair": {
+      "en-hi": {
+        "n": 2639,
+        "pearson": 0.1229,
+        "spearman": 0.1156
+      }
+    },
+    "vs_da_mean": {
+      "n": 476,
+      "pearson": 0.5963,
+      "spearman": 0.46
+    }
+  },
+  {
+    "model": "XCOMET-XL",
+    "label": "mqm_score",
+    "overall": {
+      "n": 2639,
+      "pearson": 0.0214,
+      "spearman": 0.0291
+    },
+    "per_pair": {
+      "en-hi": {
+        "n": 2639,
+        "pearson": 0.0214,
+        "spearman": 0.0291
+      }
+    },
+    "vs_da_mean": {
+      "n": 476,
+      "pearson": 0.2619,
+      "spearman": 0.152
+    }
+  }
+]

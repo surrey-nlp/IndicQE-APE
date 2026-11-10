@@ -1,0 +1,5 @@
+system,pair,n,cometkiwi,cometkiwi_subset,cometkiwi_cov,charTER,chrfpp,wordTER,wordBLEU,zero_edit
+do-nothing,enhi,1536,,0.769,0.868,44.45,55.35,55.15,36.9,0.005
+do-nothing,enmr,2098,,0.6884,0.986,26.09,74.76,34.22,61.64,0.122
+do-nothing,enta,1448,,0.7565,0.952,43.41,64.22,56.19,53.48,0.291
+do-nothing,enml,1436,0.815,0.815,1.0,31.06,78.09,38.73,60.93,0.308

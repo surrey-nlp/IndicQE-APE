@@ -1,0 +1,20 @@
+torch
+transformers
+datasets
+accelerate
+sentencepiece
+scipy
+scikit-learn
+pandas
+numpy
+pyyaml
+protobuf
+python-Levenshtein
+wandb
+safetensors
+# Optional: pypinyin (for Chinese pinyin romanization)
+# pip install pypinyin
+# Optional: peft (for LoRA adapter support)
+# pip install peft>=0.7.0# Added for LLM Embedding Extraction
+sentence-transformers>=2.0.0
+einops

@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "indicqe-ape"
+version = "0.1.0"
+description = "Evaluation codebase for the IndicQE-APE benchmark (QE + APE for Indic and low-resource language pairs)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Diptesh Kanojia", email = "d.kanojia@surrey.ac.uk"},
+]
+license = {text = "Apache-2.0"}
+keywords = ["NLP", "machine translation", "quality estimation", "automatic post-editing", "Indic", "LLM"]
+
+dependencies = [
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "datasets>=2.18",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "sacrebleu>=2.4",
+    "tqdm>=4.66",
+    "pyyaml>=6.0",
+    "tenacity>=8.2",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.30"]
+anthropic = ["anthropic>=0.34"]
+google = ["google-generativeai>=0.7"]
+cohere = ["cohere>=5.13"]
+# Trained COMET QE metrics. Kept OUT of core deps: unbabel-comet pins numpy<2 / protobuf<5,
+# which collides with vLLM (needs numpy>=2 / protobuf>=5). Install [metrics] ONLY in the
+# `indicqe` env (where COMET runs); the `indicqe-vllm` env must stay comet-free.
+metrics = ["unbabel-comet>=2.2"]
+hf = ["transformers>=4.43", "torch>=2.2", "accelerate>=0.30", "bitsandbytes>=0.43"]
+all = [
+    "openai>=1.30",
+    "anthropic>=0.34",
+    "google-generativeai>=0.7",
+    "cohere>=5.13",
+    "unbabel-comet>=2.2",
+    "transformers>=4.43",
+    "torch>=2.2",
+    "accelerate>=0.30",
+    "bitsandbytes>=0.43",
+]
+dev = ["pytest>=8.0", "pytest-cov>=4.1", "ruff>=0.5", "mypy>=1.10"]
+
+[project.scripts]
+indicqe-ape = "indicqe_ape.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

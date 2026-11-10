@@ -1,0 +1,92 @@
+# Workstation manifest: 2× RTX A5000 24 GB target. Mid-large open-weight
+# baselines plus the closed-weight comparison points. Each experiment caps at
+# 1,000 examples per pair to keep wall-clock manageable; bump or drop `limit`
+# for full-subset runs.
+#
+# Run with:
+#   python scripts/run_manifest.py configs/workstation.yaml
+
+defaults:
+  cache_dir: cache
+  seed: 0
+  limit: 1000
+
+experiments:
+  # ---- Open-weight, mid-size (single A5000 24GB in bf16) ----------------
+  - name: qwen2.5-7b_qe_enhi_zs
+    task: qe
+    provider: hf
+    model: qwen2.5-7b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  - name: aya-23-8b_qe_enhi_zs
+    task: qe
+    provider: hf
+    model: aya-23-8b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  - name: airavata_qe_enhi_zs
+    task: qe
+    provider: hf
+    model: airavata
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  # ---- Open-weight, large (4-bit on single A5000 or bf16 on both) -------
+  - name: sarvam-m-24b_qe_enhi_zs_4bit
+    task: qe
+    provider: hf
+    model: sarvam-m-24b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+    # Pass extras to HFProvider via the CLI's --provider-kwargs (or call from python directly).
+
+  - name: qwen2.5-14b_qe_enhi_zs
+    task: qe
+    provider: hf
+    model: qwen2.5-14b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  # ---- Closed-weight comparators ----------------------------------------
+  - name: gpt4o_qe_enhi_zs
+    task: qe
+    provider: openai
+    model: gpt-4o
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  - name: claude-sonnet-4-6_qe_enhi_zs
+    task: qe
+    provider: anthropic
+    model: claude-sonnet-4-6
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  - name: aya-expanse-32b_qe_enhi_zs
+    task: qe
+    provider: cohere
+    model: c4ai-aya-expanse-32b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  # ---- APE on en-mr (largest APE pool — WMT 2022 en-Marathi) ------------
+  - name: qwen2.5-7b_ape_enmr_zs
+    task: ape
+    provider: hf
+    model: qwen2.5-7b
+    pair: enmr
+    subset: ape_qe_combined
+    shots: 0
+    limit: 500
+    with_comet: true

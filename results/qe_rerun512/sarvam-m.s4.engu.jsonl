@@ -1,0 +1,1 @@
+{"_meta": {"task": "qe", "subset": "challenge", "split": "test", "pair": "engu", "shots": 4, "provider": "vllm", "model": "sarvamai/sarvam-m", "limit": null, "seed": 0, "templates": ["gemba-da", "gemba-sqm"], "fewshot_signature": "178afc54b3413e5c", "gold": "da", "gold_field": "gold_da_mean", "generation": {"max_tokens": 512, "temperature": 0.0, "top_p": 1.0, "stop": null}}}

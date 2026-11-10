@@ -1,0 +1,108 @@
+{
+  "experiment_name": "qe-A0-cometkiwi-min",
+  "model_name": "models/cometkiwi-infoxlm",
+  "track": "closed",
+  "data_file": "qe_indic_enindic.csv",
+  "dev_rmse": 1.486642837524414,
+  "dev_pearson": 0.6902869939804077,
+  "dev_spearman": 0.6571960972466108,
+  "dev_kendall": 0.48377132042739823,
+  "dev_mae": 1.0598125457763672,
+  "dev_loss": 0.6856475472450256,
+  "test_rmse": 1.626612663269043,
+  "test_pearson": 0.589766263961792,
+  "test_spearman": 0.5795820480562216,
+  "test_kendall": 0.4177712399572069,
+  "test_mae": 1.1905779838562012,
+  "test_loss": 0.7993945479393005,
+  "per_pair_test": {
+    "en-gu": {
+      "n": 1090,
+      "pearson": 0.5717,
+      "spearman": 0.6217
+    },
+    "en-hi": {
+      "n": 1853,
+      "pearson": 0.6176,
+      "spearman": 0.4998
+    },
+    "en-mr": {
+      "n": 2124,
+      "pearson": 0.6598,
+      "spearman": 0.6489
+    },
+    "en-ta": {
+      "n": 1973,
+      "pearson": 0.6638,
+      "spearman": 0.6915
+    },
+    "en-te": {
+      "n": 1120,
+      "pearson": 0.3152,
+      "spearman": 0.293
+    }
+  },
+  "per_pair_dev": {
+    "en-gu": {
+      "n": 350,
+      "pearson": 0.6861,
+      "spearman": 0.7062
+    },
+    "en-hi": {
+      "n": 629,
+      "pearson": 0.7487,
+      "spearman": 0.7463
+    },
+    "en-mr": {
+      "n": 652,
+      "pearson": 0.6909,
+      "spearman": 0.6374
+    },
+    "en-ta": {
+      "n": 623,
+      "pearson": 0.7353,
+      "spearman": 0.6756
+    },
+    "en-te": {
+      "n": 334,
+      "pearson": 0.3382,
+      "spearman": 0.3611
+    }
+  },
+  "loss_function": "huber",
+  "loss_kwargs": "{\"delta\": 1.0}",
+  "num_train": 64416,
+  "num_dev": 2588,
+  "num_test": 8160,
+  "learning_rate": 3e-05,
+  "train_batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "num_train_epochs": 4.0,
+  "weight_decay": 0.01,
+  "max_length": 256,
+  "seed": 42,
+  "best_checkpoint": "experiments/comet_qe/outputs/qe-A0-cometkiwi-min/checkpoint-16104",
+  "use_hybrid_model": true,
+  "deep_mlp": true,
+  "use_lora": false,
+  "use_attention": true,
+  "use_levenshtein": false,
+  "use_normalized_levenshtein": false,
+  "use_jaccard": false,
+  "use_pinyin": false,
+  "use_subword_ratio": false,
+  "use_cefr": false,
+  "use_lid": false,
+  "prepend_lid": false,
+  "use_target_context_entropy": false,
+  "use_target_source_alignment": false,
+  "use_target_source_entropy": false,
+  "use_context_target_entropy": false,
+  "use_multi_layer_entropy": false,
+  "use_attention_variance": false,
+  "use_global_cls_entropy": false,
+  "multi_layer_funneling": true,
+  "funneling_layers": null,
+  "num_funneling_layers": 4
+}

@@ -1,0 +1,34 @@
+# Pinned for reproducibility. Generated 2026-05-06.
+# Install via `pip install -r requirements.txt` for the full evaluation stack.
+
+# Core
+pandas==2.2.2
+pyarrow==17.0.0
+datasets==2.20.0
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.5.1
+tqdm==4.66.4
+pyyaml==6.0.2
+tenacity==8.5.0
+
+# Metrics
+sacrebleu==2.4.2
+unbabel-comet==2.2.2
+
+# LLM providers (install only what you need)
+openai==1.40.0
+anthropic==0.34.2
+google-generativeai==0.7.2
+cohere==5.13.10
+
+# Open-weight models
+transformers==4.44.0
+torch==2.4.0
+accelerate==0.33.0
+bitsandbytes==0.43.3
+
+# Dev
+pytest==8.3.2
+pytest-cov==5.0.0
+ruff==0.6.2

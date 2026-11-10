@@ -1,0 +1,24 @@
+# Generated at runtime — never commit
+__pycache__/
+*.pyc
+.pytest_cache/
+wandb/
+
+# Smoke / training outputs (the campaign outputs under results/campaign/ are tracked)
+/outputs/
+results/experiment_results.csv
+
+# Generated data (built by scripts/build_qe_data.py)
+data/qe_indic_*.csv
+data/qe_indic_*.scaler.json
+
+# Model weights (fetched via extraction; too large to track).
+# The COMET encoder dir keeps only its config + tokenizer.
+models/tiny-xlmr/
+models/comet-xlmr/*.safetensors
+models/comet-xlmr/*.bin
+models/comet-xlmr/pytorch_model*.bin
+models/cometkiwi-infoxlm/
+models/*-enc/
+models/comet-xlmr/tokenizer.json
+models/comet-xlmr/sentencepiece.bpe.model

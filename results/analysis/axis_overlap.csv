@@ -1,0 +1,15 @@
+quantity,n
+segments on exactly 0 axes,5114.0
+segments on exactly 1 axes,3265.0
+segments on exactly 2 axes,2829.0
+segments on exactly 3 axes,1503.0
+segments on exactly 4 axes,19.0
+segments on at least one axis,7616.0
+segments on no axis,5114.0
+DA-bearing challenge segments,12730.0
+Jaccard A1/A2,0.3279
+Jaccard A1/A3,0.3303
+Jaccard A1/A4,0.1383
+Jaccard A2/A3,0.5249
+Jaccard A2/A4,0.0202
+Jaccard A3/A4,0.0934

@@ -1,0 +1,53 @@
+# Laptop manifest: small models, small subsets — the kind of run that fits
+# on Apple Silicon / mid-range hardware in a couple of hours.
+#
+# Run with:
+#   python scripts/run_manifest.py configs/laptop.yaml
+
+defaults:
+  cache_dir: cache
+  seed: 0
+  limit: 100             # cap each pair at 100 examples for the laptop budget
+
+experiments:
+  # ---- QE smoke runs across pairs (Qwen 1.5B is the recommended laptop model)
+  - name: qwen2.5-1.5b_qe_enhi_zs
+    task: qe
+    provider: hf
+    model: qwen2.5-1.5b
+    pair: enhi
+    subset: qe_only
+    shots: 0
+
+  - name: qwen2.5-1.5b_qe_enmr_zs
+    task: qe
+    provider: hf
+    model: qwen2.5-1.5b
+    pair: enmr
+    subset: qe_only
+    shots: 0
+
+  - name: qwen2.5-1.5b_qe_enta_zs
+    task: qe
+    provider: hf
+    model: qwen2.5-1.5b
+    pair: enta
+    subset: qe_only
+    shots: 0
+
+  # ---- Optional API runs (uncomment if you have keys)
+  # - name: gpt4o-mini_qe_enhi_zs
+  #   task: qe
+  #   provider: openai
+  #   model: gpt-4o-mini
+  #   pair: enhi
+  #   subset: qe_only
+  #   shots: 0
+
+  # - name: claude-haiku_qe_enhi_zs
+  #   task: qe
+  #   provider: anthropic
+  #   model: claude-haiku-4-5
+  #   pair: enhi
+  #   subset: qe_only
+  #   shots: 0

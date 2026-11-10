@@ -1,0 +1,162 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.installed.cfg
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenv
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project — large / regenerable / sensitive
+results/*
+!results/.gitkeep
+cache/*
+!cache/.gitkeep
+data_cache/
+hf_cache/
+*.parquet
+*.jsonl
+.env
+.envrc
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Model artefacts
+*.bin
+*.safetensors
+checkpoints/
+
+# ---- Data & build artefacts (code repo only; data lives on HuggingFace) ----
+dataset/release_build*/
+**/*.parquet
+**/*.xlsx
+**/*.xls
+**/snapshot/
+indicqeape/
+**/out/
+**/outputs/
+*.jsonl
+ALOPE-RL-Dataset/
+poster/*.png
+
+# SLURM / run logs
+logs/
+
+# LaTeX + stray build artefacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# experiment artefacts
+#
+# NOTE the root anchor. This was `results/` until 12 Aug, which matches a directory of that name at
+# any depth. It had to become root-anchored so that traversal into ./results could be restored for
+# the tracked aggregate CSVs (block at the end of this file). Un-anchoring it also un-ignored every
+# nested results/ directory, 13 GB of them, so those are named explicitly below.
+/results/*
+experiments/**/results/
+logs/
+results_srv/
+runs/
+.claude/
+dataset/README_assembled.md
+dataset/wordqe_build/
+# campaign artefacts: keep summaries/predictions/logs, never checkpoints
+experiments/comet_qe/results/campaign/outputs/*/checkpoint-*/
+experiments/comet_qe/outputs/
+
+# local HF snapshot (307M, regenerate with snapshot_download; HF is the data authority)
+dataset/hf_snapshot/
+.local-scratch/          # off-cluster scratch created by cluster/env.sh
+
+# ACL Anthology bib dump (73M, regenerate: curl -o refs/anthology.bib https://aclanthology.org/anthology.bib)
+refs/anthology.bib
+
+# ---------------------------------------------------------------------------------------------
+# Re-include the aggregate CSVs behind the paper's tables.
+#
+# This block must stay LAST. The last matching pattern wins, `results/*` appears twice above, and
+# a negation placed before them is silently re-excluded. Three lines are needed, in this order:
+#   !results/analysis/     restore directory traversal, or nothing inside can match at all
+#   results/analysis/*     re-exclude every entry, including subdirectories
+#   !results/analysis/*.csv  admit the CSVs at that one level, and nothing else
+# Without the middle line the negation also admits every .md report and the improve/ subtree.
+#
+# These are kilobytes and they are what makes `bash analysis/run_all_checks.sh` run on a fresh
+# clone rather than only on a populated tree. The per-instance and raw dumps beside them are
+# megabytes and stay out; they ship in the evidence bundle instead
+# (analysis/export_evidence_bundle.py).
+# ---------------------------------------------------------------------------------------------
+!/results/analysis/
+/results/analysis/*
+!/results/analysis/*.csv
+/results/analysis/*_perinstance.csv
+/results/analysis/llm_judge_raw*.csv
+/results/analysis/domain_compare*.csv
+/results/analysis/joint_qe_ape.csv
+/results/analysis/wmt_meta_all*.csv
+
+# The paper's LaTeX source is not part of this repository. If you have it, place it here (or point
+# INDICQE_PAPER_TEX / INDICQE_PAPER_DIR at it) to run the checks that compare tables and prose
+# figures against it; see analysis/paper_source.py.
+paper/
+
+# a separate checkout that happens to live here; never part of this repository
+tiny-aya-fire_IndicQE/
+
+# ---------------------------------------------------------------------------------------------
+# Re-include the per-instance model outputs behind the paper (QE prompting, APE generations,
+# learned-metric scores, MQM zero-shot) and the COMET-head campaign outputs. Like the CSV block
+# above, this must stay at the end so that it wins over `/results/*`, `*.jsonl`, `**/outputs/`
+# and `experiments/**/results/`. Run logs, queue status markers and checkpoints stay out.
+# ---------------------------------------------------------------------------------------------
+!/results/qe_*/
+!/results/qe_*/**
+!/results/ape_*/
+!/results/ape_*/**
+!/results/zeroshot_mqm/
+!/results/zeroshot_mqm/**
+!experiments/comet_qe/results/
+experiments/comet_qe/results/*
+!experiments/comet_qe/results/campaign/
+!experiments/comet_qe/results/campaign/**
+experiments/comet_qe/results/campaign/logs/
+experiments/comet_qe/results/campaign/runs_status/
+experiments/comet_qe/results/campaign/outputs/*/checkpoint-*/
+**/*.DONE
+**/*.RUNNING

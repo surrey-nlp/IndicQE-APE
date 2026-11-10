@@ -1,0 +1,10 @@
+system,macro_tau,best_rank,worst_rank
+BharatGPT-3B-Indic,0.075,7,9
+Llama-3.2-3B-Instruct,0.172,7,9
+tiny-aya-fire,0.232,5,9
+aya-expanse-32b,0.321,5,7
+sarvam-m,0.344,3,7
+gpt-5.5,0.461,1,4
+cometkiwi-da,0.452,2,3
+cometkiwi-xl,0.497,1,4
+xcomet-xl,0.355,3,7

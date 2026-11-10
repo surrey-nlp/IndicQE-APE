@@ -1,0 +1,23 @@
+# Open-weight models for the QE sweep. One HF id per line; '#' = comment. Row index = line
+# order among the UNCOMMENTED ids (0-based); submit 20_qe_prompt_open with --array covering
+# model_index*8 .. model_index*8+7 (8 language pairs). 6 active models -> full array 0-47.
+#
+# Provider: 3B text models run on the `hf` provider (IQE_PROVIDER=hf); the 24-32B models run on
+# `vllm` (IQE_PROVIDER=vllm) in the indicqe-vllm env. vLLM defaults trust_remote_code=True, so
+# the custom-arch ones (sarvam-30b MoE) load fine. Verified IDs/sizes/licences (11 Jun 2026).
+#
+# ---- tier=small : 3B Indic-specialist (rows 0-15) — hf provider; FINE-TUNABLE (ALOPE backbones)
+CoRover/BharatGPT-3B-Indic     # 3.2B llama, 12 Indic langs (gated). Weak QE baseline (~0.11 mean).
+CohereLabs/tiny-aya-fire       # 3.3B, 60+ langs (gated, cc-by-nc). Best 3B QE so far (~0.32 mean).
+#
+# ---- tier=indic-large : Indic-SPECIALIST 24B (rows 16-23) — vllm; a100 (bf16, TP=1)
+sarvamai/sarvam-m              # 23.6B mistral3 (multimodal, text-only here), apache-2.0, UNGATED. SOTA Indic.
+# sarvamai/sarvam-30b          # 32B MoE — needs vLLM PR #33942 / hotpatch_vllm.py; enable only if vLLM supports sarvam_moe.
+#
+# ---- tier=general-large : general multilingual 27-31B (rows 24-39) — vllm; a100 (TP=1)
+Qwen/Qwen3.6-27B               # 27.8B qwen3_5 (multimodal), apache-2.0 UNGATED. General frontier-open contrast.
+google/gemma-4-31B-it          # 32.7B gemma4 (multimodal), apache-2.0 UNGATED. General frontier-open contrast.
+#
+# ---- tier=heavy (zero-shot only; uncomment to add, a100) ----
+# CohereLabs/aya-expanse-32b              # 32B cohere, GATED cc-by-nc; Indic coverage = Hindi only.
+# CohereLabs/command-a-plus-05-2026-w4a4  # 126B w4a4/compressed-tensors; a100, VLLM_QUANT=compressed-tensors.

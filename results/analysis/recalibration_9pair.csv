@@ -1,0 +1,6 @@
+system,n_pairs,raw_sys_pearson,raw_sys_PA,boot_pearson_lo,boot_pearson_hi,offset_vs_quality_corr,recal_before_pearson,recal_after_pearson,recal_before_PA,recal_after_PA
+cometkiwi-xl,9,-0.208,0.389,-0.93,0.32,-0.442,-0.221,0.997,0.389,1.0
+cometkiwi-da,9,0.783,0.75,0.554,0.955,0.229,0.794,0.998,0.75,1.0
+xcomet-xl,9,0.607,0.722,0.037,0.88,0.433,0.631,0.998,0.722,1.0
+gpt-5.5,9,0.941,0.889,0.737,0.991,0.641,0.94,0.998,0.889,1.0
+sarvam-m,9,0.913,0.917,0.77,0.991,0.595,0.911,0.997,0.917,1.0

@@ -1,0 +1,145 @@
+license: cc-by-4.0
+task_categories: [translation, text-classification]
+task_ids: [text-scoring]
+language: [en, hi, mr, ta, ml, te, gu, et, ne, si]
+multilinguality: [multilingual]
+annotations_creators: [expert-generated, machine-generated]
+size_categories: [100K<n<1M]
+pretty_name: IndicQE-APE
+tags: [quality-estimation, automatic-post-editing, machine-translation, low-resource, indic, dravidian, akshara, challenge-set, direct-assessment]
+configs:
+  - config_name: all
+    default: true
+    data_files:
+      - split: train
+        path: data/all/train.parquet
+      - split: validation
+        path: data/all/validation.parquet
+      - split: test
+        path: data/all/test.parquet
+  - config_name: full
+    data_files:
+      - split: train
+        path: data/full/train.parquet
+      - split: validation
+        path: data/full/validation.parquet
+      - split: test
+        path: data/full/test.parquet
+  - config_name: qe-da
+    data_files:
+      - split: train
+        path: data/tasks/qe-da/train.parquet
+      - split: validation
+        path: data/tasks/qe-da/validation.parquet
+      - split: test
+        path: data/tasks/qe-da/test.parquet
+  - config_name: ape
+    data_files:
+      - split: train
+        path: data/tasks/ape/train.parquet
+      - split: validation
+        path: data/tasks/ape/validation.parquet
+      - split: test
+        path: data/tasks/ape/test.parquet
+  - config_name: word-qe
+    data_files:
+      - split: train
+        path: data/tasks/word-qe/train.parquet
+      - split: validation
+        path: data/tasks/word-qe/validation.parquet
+      - split: test
+        path: data/tasks/word-qe/test.parquet
+  - config_name: explainable-qe
+    data_files:
+      - split: train
+        path: data/tasks/explainable-qe/train.parquet
+      - split: validation
+        path: data/tasks/explainable-qe/validation.parquet
+      - split: test
+        path: data/tasks/explainable-qe/test.parquet
+  - config_name: en-hi
+    data_files:
+      - split: train
+        path: data/pairs/en-hi/train.parquet
+      - split: validation
+        path: data/pairs/en-hi/validation.parquet
+      - split: test
+        path: data/pairs/en-hi/test.parquet
+  - config_name: en-mr
+    data_files:
+      - split: train
+        path: data/pairs/en-mr/train.parquet
+      - split: validation
+        path: data/pairs/en-mr/validation.parquet
+      - split: test
+        path: data/pairs/en-mr/test.parquet
+  - config_name: en-ta
+    data_files:
+      - split: train
+        path: data/pairs/en-ta/train.parquet
+      - split: validation
+        path: data/pairs/en-ta/validation.parquet
+      - split: test
+        path: data/pairs/en-ta/test.parquet
+  - config_name: en-ml
+    data_files:
+      - split: train
+        path: data/pairs/en-ml/train.parquet
+      - split: validation
+        path: data/pairs/en-ml/validation.parquet
+      - split: test
+        path: data/pairs/en-ml/test.parquet
+  - config_name: en-te
+    data_files:
+      - split: train
+        path: data/pairs/en-te/train.parquet
+      - split: validation
+        path: data/pairs/en-te/validation.parquet
+      - split: test
+        path: data/pairs/en-te/test.parquet
+  - config_name: en-gu
+    data_files:
+      - split: train
+        path: data/pairs/en-gu/train.parquet
+      - split: validation
+        path: data/pairs/en-gu/validation.parquet
+      - split: test
+        path: data/pairs/en-gu/test.parquet
+  - config_name: et-en
+    data_files:
+      - split: train
+        path: data/pairs/et-en/train.parquet
+      - split: validation
+        path: data/pairs/et-en/validation.parquet
+      - split: test
+        path: data/pairs/et-en/test.parquet
+  - config_name: ne-en
+    data_files:
+      - split: train
+        path: data/pairs/ne-en/train.parquet
+      - split: validation
+        path: data/pairs/ne-en/validation.parquet
+      - split: test
+        path: data/pairs/ne-en/test.parquet
+  - config_name: si-en
+    data_files:
+      - split: train
+        path: data/pairs/si-en/train.parquet
+      - split: validation
+        path: data/pairs/si-en/validation.parquet
+      - split: test
+        path: data/pairs/si-en/test.parquet
+  - config_name: mqm
+    data_files:
+      - split: train
+        path: data/tasks/mqm/train.parquet
+      - split: validation
+        path: data/tasks/mqm/validation.parquet
+      - split: test
+        path: data/tasks/mqm/test.parquet
+  - config_name: challenge
+    data_files:
+      - split: test
+        path: data/challenge/test.parquet
+      - split: test_blind
+        path: data/challenge/test_blind.parquet

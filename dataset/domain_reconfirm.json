@@ -1,0 +1,36 @@
+{
+  "release": "surrey-nlp/IndicQE-APE",
+  "n_annotated_raw": 92492,
+  "n_used": 89399,
+  "dedup": "eng",
+  "k": 5,
+  "accuracy_mean": 0.826,
+  "accuracy_std": 0.001,
+  "macro_f1_mean": 0.805,
+  "macro_f1_std": 0.003,
+  "acc_folds": [
+    0.825,
+    0.827,
+    0.826,
+    0.828,
+    0.828
+  ],
+  "f1_folds": [
+    0.804,
+    0.804,
+    0.803,
+    0.804,
+    0.81
+  ],
+  "llm_baseline": {
+    "model": "gpt-5.4-nano (convention+6-shot)",
+    "accuracy": 0.618,
+    "macro_f1": 0.595
+  },
+  "paper_cited": {
+    "accuracy": 0.824,
+    "accuracy_std": 0.003,
+    "macro_f1": 0.786,
+    "macro_f1_std": 0.002
+  }
+}

@@ -1,0 +1,27 @@
+# ═══════════════════════════════════════════════════════════════
+# COMET-22 (XLM-R Encoder) — Huber Loss
+# ═══════════════════════════════════════════════════════════════
+experiment_name: v2-comet22-huber
+model_name: models/comet-xlmr
+data_path: data/all.csv
+
+input_columns:
+  - L1_context
+  - L1_source_word
+  - en_target_clue
+  - en_target_pos
+  - en_target_word
+
+use_hybrid_model: false
+loss_function: huber
+loss_kwargs:
+  delta: 1.0
+
+learning_rate: 2e-5
+train_batch_size: 32
+eval_batch_size: 16
+num_train_epochs: 15
+weight_decay: 0.01
+max_length: 256
+seed: 42
+fp16: true
